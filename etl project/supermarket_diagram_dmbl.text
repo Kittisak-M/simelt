@@ -14,7 +14,7 @@ Table customers { // done
   phone varchar(20)
   address varchar(200)
   city varchar(50)
-  country varchar(50)
+  country varchar(100)
   registration_date date
 }
 
@@ -35,14 +35,14 @@ Table orders { // done
   quantities int
 }
 
-Table product_orders {
+Table product_orders { // done
   suppiler_purchase_order_id int [pk, increment,unique]
   employee_id int [ref: > employees.employee_id]
   branch_id int [ref: > branch.branch_id]
   order_date date
 }
 
-Table products_in_supplier_orders {
+Table products_in_supplier_orders { // done
   suppiler_purchase_order_id int [pk, ref:> product_orders.suppiler_purchase_order_id]
   suppiler_id int [ref:> suppliers.supplier_id]
   product_id int [ref: > products.product_id]
